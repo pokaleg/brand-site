@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gayatri Pokale — Full-Stack Software Engineer</title>
+<meta name="description" content="Full-stack software engineer who builds end-to-end systems and AI-powered applications. Production backend experience, completed government co-op, and deployed AI tools.">
+<meta name="theme-color" content="#1B2A41">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B2A41'/%3E%3Ctext x='16' y='21' font-family='monospace' font-weight='bold' font-size='11' fill='%23F5F5F2' text-anchor='middle'%3E%3CGP/%3E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A41; --teal:#0E7C7B; --offwhite:#F5F5F2; --gray:#8A94A6; --amber:#E8A33D;
+  --body:#1B2A41; --maxw:1080px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important}}
+body{font-family:'Inter',sans-serif;color:var(--body);background:var(--offwhite);line-height:1.6}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:var(--offwhite);border-bottom:1px solid rgba(138,148,166,.35)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.wordmark{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:1.15rem;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
+.wordmark .dot{color:var(--teal)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.9rem;color:var(--navy);text-decoration:none;font-weight:500}
+.nav-links a:hover{color:var(--teal)}
+.burger{display:none;background:none;border:1px solid var(--gray);border-radius:6px;padding:6px 10px;font-family:'JetBrains Mono',monospace;color:var(--navy);cursor:pointer}
+@media(max-width:760px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--offwhite);flex-direction:column;gap:0;border-bottom:1px solid rgba(138,148,166,.35)}
+  .nav-links.open{display:flex}
+  .nav-links li{border-top:1px solid rgba(138,148,166,.25)}
+  .nav-links a{display:block;padding:14px 24px}
+  .burger{display:block}
+}
+
+/* HERO */
+.hero{background:var(--navy);color:var(--offwhite);padding:88px 0 72px}
+.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:500;max-width:880px}
+.hero .sub{margin-top:18px;color:var(--gray);font-size:1.05rem}
+.cursor{display:inline-block;width:.55em;height:1em;background:var(--teal);vertical-align:-0.12em;margin-left:6px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.cursor{animation:none}}
+.cta-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 26px;border-radius:6px;font-weight:600;font-size:.95rem;text-decoration:none;font-family:'Space Grotesk',sans-serif}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:#0c6b6a}
+.btn-outline{border:1.5px solid var(--offwhite);color:var(--offwhite)}
+.btn-outline:hover{border-color:var(--teal);color:#fff}
+.chips{margin-top:44px;display:flex;gap:12px;flex-wrap:wrap;list-style:none}
+.chips li{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;color:var(--offwhite);border:1px solid var(--gray);border-radius:4px;padding:7px 12px}
+
+/* SECTIONS */
+section{padding:76px 0}
+.eyebrow{font-family:'JetBrains Mono',monospace;color:var(--teal);font-size:.8rem;letter-spacing:.08em;margin-bottom:10px}
+.section-title{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--navy);margin-bottom:40px}
+
+/* PROJECTS */
+.card{background:#fff;border:1px solid rgba(138,148,166,.3);border-radius:10px;padding:26px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--teal);box-shadow:0 6px 20px rgba(27,42,65,.08)}
+.proj-img{width:100%;aspect-ratio:16/9;border-radius:8px;border:1px solid rgba(138,148,166,.3);object-fit:cover;background:var(--navy);margin-bottom:20px;display:block}
+.ph{display:flex;align-items:center;justify-content:center;color:var(--gray);font-family:'JetBrains Mono',monospace;font-size:.8rem}
+.featured{margin-bottom:28px}
+.featured .flag{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--teal);margin-bottom:10px}
+.card h3{color:var(--navy);font-size:1.25rem;margin-bottom:14px}
+.pao{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:14px 0 18px}
+@media(max-width:760px){.pao{grid-template-columns:1fr}}
+.pao h4{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--gray);margin-bottom:6px;text-transform:uppercase}
+.pao p,.card>p{font-size:.93rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;list-style:none}
+.tags li{font-family:'JetBrains Mono',monospace;font-size:.7rem;background:var(--offwhite);border:1px solid rgba(138,148,166,.4);border-radius:4px;padding:4px 9px;color:var(--navy)}
+.card-links{display:flex;gap:12px;flex-wrap:wrap}
+.btn-sm{padding:9px 18px;font-size:.85rem}
+.btn-navy{background:var(--navy);color:var(--offwhite)}
+.btn-navy:hover{background:#24344f}
+.btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:760px){.grid-2{grid-template-columns:1fr}}
+
+/* ABOUT */
+.about{background:#fff}
+.timeline{display:flex;gap:0;align-items:center;flex-wrap:wrap;margin-bottom:48px;font-family:'JetBrains Mono',monospace;font-size:.82rem}
+.timeline .node{background:var(--navy);color:var(--offwhite);border-radius:6px;padding:10px 16px}
+.timeline .arrow{color:var(--teal);padding:0 12px;font-weight:700}
+.diff{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px}
+@media(max-width:760px){.diff{grid-template-columns:1fr}}
+.diff h3{font-size:1.02rem;color:var(--navy);margin-bottom:8px}
+.diff .rule{width:34px;height:3px;background:var(--teal);margin-bottom:14px}
+.diff p{font-size:.92rem}
+.narrative{max-width:760px;font-size:1.02rem}
+.narrative strong{color:var(--navy)}
+
+/* EXPERIENCE */
+.xp-item{border-left:2px solid rgba(138,148,166,.4);padding:0 0 40px 26px;position:relative}
+.xp-item:last-of-type{padding-bottom:8px}
+.xp-item::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--teal)}
+.xp-item .dates{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--gray);letter-spacing:.05em}
+.xp-item h3{color:var(--navy);font-size:1.15rem;margin:6px 0 2px}
+.xp-item .org{font-style:italic;color:var(--teal);font-size:.92rem;margin-bottom:10px}
+.xp-item ul{padding-left:18px;font-size:.93rem}
+.xp-item li{margin-bottom:6px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
+@media(max-width:760px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+.skills-grid h3{font-size:.95rem;color:var(--navy);margin-bottom:10px}
+.skills-grid ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.skills-grid li{font-family:'JetBrains Mono',monospace;font-size:.7rem;background:#fff;border:1px solid rgba(138,148,166,.4);border-radius:4px;padding:4px 9px}
+
+/* CONTACT */
+.contact{background:var(--navy);color:var(--offwhite)}
+.contact .section-title{color:var(--offwhite)}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+label{display:block;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.07em;margin:16px 0 6px;color:var(--gray)}
+input,textarea{width:100%;background:#22334d;border:1px solid var(--gray);border-radius:6px;padding:11px 13px;color:var(--offwhite);font-family:'Inter',sans-serif;font-size:.95rem}
+input:focus,textarea:focus{border-color:var(--teal)}
+textarea{min-height:120px;resize:vertical}
+#send{margin-top:20px;border:none;cursor:pointer}
+#send:disabled{background:#3a4a63;color:var(--gray);cursor:not-allowed}
+.direct h3{font-size:1rem;margin-bottom:14px;color:var(--offwhite)}
+.direct ul{list-style:none}
+.direct li{margin-bottom:12px;font-size:.95rem}
+.direct a{color:var(--offwhite);text-decoration:underline;text-decoration-color:var(--gray)}
+.direct a:hover{text-decoration-color:var(--offwhite)}
+.hint{font-size:.8rem;color:var(--gray);margin-top:10px}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid #2c3d59;padding:22px 0}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.gpmark{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--offwhite)}
+.foot-links{display:flex;gap:20px;list-style:none}
+.foot-links a{color:var(--offwhite);font-size:.85rem;text-decoration:none}
+.foot-links a:hover{color:#fff;text-decoration:underline}
+
+/* STICKY MOBILE CTA */
+.sticky-cta{display:none}
+@media(max-width:760px){
+  .sticky-cta{display:block;position:fixed;bottom:0;left:0;right:0;z-index:40;background:var(--teal);color:#fff;text-align:center;padding:15px;font-family:'Space Grotesk',sans-serif;font-weight:600;text-decoration:none}
+  body{padding-bottom:52px}
+  footer{padding-bottom:74px}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap nav-inner">
+    <a class="wordmark" href="#home">Gayatri Pokale<span class="dot">.</span></a>
+    <button class="burger mono" aria-expanded="false" aria-controls="navlinks" onclick="toggleNav(this)">&lt;/&gt;</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <h1>I help engineering teams ship full-stack systems and AI-powered applications — an engineer who builds end-to-end and finishes what they start<span class="cursor" aria-hidden="true"></span></h1>
+    <p class="sub">Production backend experience. Completed government co-op. Deployed AI tools.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#projects">View my work</a>
+      <a class="btn btn-outline" href="#contact">Contact</a>
+    </div>
+    <ul class="chips">
+      <li>INFOSYS &middot; 2.5 YRS PRODUCTION</li>
+      <li>COMMONWEALTH OF MA &middot; CO-OP</li>
+      <li>MS &middot; NORTHEASTERN</li>
+    </ul>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="eyebrow">// PROJECTS</p>
+    <h2 class="section-title">Systems built end-to-end</h2>
+
+    <article class="card featured">
+      <p class="flag">FEATURED CASE STUDY</p>
+      <img class="proj-img" src="images/sectorbrief.png" alt="SectorBrief architecture illustration: news routed by AI to sector teams" onerror="this.outerHTML='<div class=&quot;proj-img ph&quot;>sectorbrief-visual</div>'">
+      <h3>SectorBrief — AI Market Intelligence Agent</h3>
+      <div class="pao">
+        <div><h4>Problem</h4><p>Business teams drown in unrouted market news with no clear owner or signal.</p></div>
+        <div><h4>Approach</h4><p>A Python agent collects news via RSS, classifies sentiment and sector with Groq LLMs, and emails personalized HTML intelligence reports to the right team via the Gmail API.</p></div>
+        <div><h4>Outcome</h4><p>Deployed on Streamlit Cloud at a live public URL and tested with real users.</p></div>
+      </div>
+      <ul class="tags"><li>Python</li><li>Groq</li><li>Streamlit</li><li>Gmail API</li></ul>
+      <div class="card-links">
+        <a class="btn btn-sm btn-navy" href="https://market-intelligence-agent-omxc3k7esjjlmbkkatzu4j.streamlit.app" target="_blank" rel="noopener">Live demo</a>
+        <a class="btn btn-sm btn-ghost" href="https://github.com/pokaleg/market-intelligence-agent" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <div class="grid-2">
+      <article class="card">
+        <img class="proj-img" src="images/cloud-platform.png" alt="Cloud platform illustration: infrastructure as code across AWS and GCP" onerror="this.outerHTML='<div class=&quot;proj-img ph&quot;>cloud-platform-visual</div>'">
+        <h3>Cloud-Native Web Application Platform</h3>
+        <p>Multi-cloud infrastructure-as-code on AWS and GCP with Terraform. Automated CI/CD with GitHub Actions and Packer deploys production-ready environments in under 10 minutes.</p>
+        <ul class="tags"><li>Terraform</li><li>AWS</li><li>GCP</li><li>GitHub Actions</li></ul>
+        <div class="card-links">
+          <a class="btn btn-sm btn-ghost" href="https://github.com/pokaleg/Cloud-Native-Web-Application-Platform" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="proj-img" src="images/rideease.png" alt="RideEase illustration: full-stack rental platform pipeline" onerror="this.outerHTML='<div class=&quot;proj-img ph&quot;>rideease-visual</div>'">
+        <h3>RideEase — Vehicle Rental Platform</h3>
+        <p>Full-stack SaaS rental platform with JWT authentication, role-based workflows, and layered Spring Boot architecture.</p>
+        <ul class="tags"><li>Spring Boot</li><li>PostgreSQL</li><li>Next.js</li><li>JWT</li></ul>
+        <div class="card-links">
+          <a class="btn btn-sm btn-ghost" href="https://github.com/pokaleg/RideEase" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <p class="eyebrow">// ABOUT</p>
+    <h2 class="section-title">The path so far</h2>
+    <div class="timeline" role="list">
+      <span class="node" role="listitem">Infosys</span><span class="arrow" aria-hidden="true">&rarr;</span>
+      <span class="node" role="listitem">Northeastern MS</span><span class="arrow" aria-hidden="true">&rarr;</span>
+      <span class="node" role="listitem">Commonwealth co-op</span><span class="arrow" aria-hidden="true">&rarr;</span>
+      <span class="node" role="listitem">Deployed AI</span>
+    </div>
+    <div class="diff">
+      <div><div class="rule"></div><h3>Production backend</h3><p>10,000+ users depended on my Java services at Infosys.</p></div>
+      <div><div class="rule"></div><h3>Government-grade APIs</h3><p>State auditors used my Commonwealth of Massachusetts APIs daily.</p></div>
+      <div><div class="rule"></div><h3>Deployed AI tools</h3><p>Live public URLs, not private repos.</p></div>
+    </div>
+    <p class="narrative">I spent two and a half years building Java microservices at Infosys before grad school — shipping code 10,000+ users depended on in production. At the Commonwealth of Massachusetts I built government APIs that auditors relied on every day. Now I build AI pipelines that live at public URLs, not in private repositories. <strong>I'm not transitioning into software engineering. I'm already in it, leveling up.</strong></p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="eyebrow">// EXPERIENCE</p>
+    <h2 class="section-title">Where I've shipped</h2>
+
+    <div class="xp-item">
+      <p class="dates">JUN 2025 – DEC 2025</p>
+      <h3>Software Engineer Co-op</h3>
+      <p class="org">Commonwealth of Massachusetts — Division of Banks</p>
+      <ul>
+        <li>Shipped full-stack features for the Regulatory Management System in C#, ASP.NET, and SQL Server, supporting daily work for 500+ regulatory staff.</li>
+        <li>Rewrote and indexed the slowest reporting queries, improving SQL performance by 35% and cutting recurring production defects by 30%.</li>
+        <li>Automated document intake and routing previously handled by hand, removing 70% of manual processing effort.</li>
+      </ul>
+    </div>
+
+    <div class="xp-item">
+      <p class="dates">NOV 2021 – MAR 2024</p>
+      <h3>Software Engineer</h3>
+      <p class="org">Infosys — The Hartford Insurance Group</p>
+      <ul>
+        <li>Designed and shipped Java and Spring Boot microservices on AWS supporting insurance workflows for 10,000+ production users.</li>
+        <li>Delivered 20+ REST endpoints and tuned data access paths, improving average response times by 30%.</li>
+        <li>Kept production services above 99% availability through monitoring, alerting, and Root Cause Analysis.</li>
+      </ul>
+    </div>
+
+    <div class="skills-grid">
+      <div><h3>Backend</h3><ul><li>Java</li><li>Spring Boot</li><li>C#/.NET</li><li>Node.js</li></ul></div>
+      <div><h3>Frontend</h3><ul><li>React</li><li>Next.js</li><li>TypeScript</li></ul></div>
+      <div><h3>AI / ML</h3><ul><li>Python</li><li>Groq</li><li>Streamlit</li></ul></div>
+      <div><h3>DevOps</h3><ul><li>AWS</li><li>GCP</li><li>Terraform</li><li>Docker</li><li>GitHub Actions</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">// CONTACT</p>
+    <h2 class="section-title">Have a role where things need to actually ship?</h2>
+    <div class="contact-grid">
+      <form id="cform" novalidate>
+        <label for="fname">NAME</label>
+        <input id="fname" name="name" type="text" required autocomplete="name">
+        <label for="femail">EMAIL</label>
+        <input id="femail" name="email" type="email" required autocomplete="email">
+        <label for="fmsg">MESSAGE</label>
+        <textarea id="fmsg" name="message" required></textarea>
+        <button class="btn btn-primary" id="send" type="submit" disabled>Send message</button>
+        <p class="hint">Opens your email app with the message pre-filled.</p>
+      </form>
+      <div class="direct">
+        <h3>Or reach me directly</h3>
+        <ul>
+          <li><a href="mailto:pokale.g@northeastern.edu">pokale.g@northeastern.edu</a></li>
+          <li><a href="https://www.linkedin.com/in/gayatripokale/" target="_blank" rel="noopener">linkedin.com/in/gayatripokale</a></li>
+          <li><a href="https://github.com/pokaleg" target="_blank" rel="noopener">github.com/pokaleg</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="gpmark">&lt;GP/&gt;</span>
+    <ul class="foot-links">
+      <li><a href="https://www.linkedin.com/in/gayatripokale/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/pokaleg" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="mailto:pokale.g@northeastern.edu">Email</a></li>
+    </ul>
+  </div>
+</footer>
+
+<a class="sticky-cta" id="stickycta" href="#contact">Contact — let's talk</a>
+
+<script>
+function toggleNav(btn){
+  const l=document.getElementById('navlinks');
+  const open=l.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('navlinks').classList.remove('open');
+}));
+
+// Contact form: validate, enable, send via mailto
+const f=document.getElementById('cform');
+const send=document.getElementById('send');
+const fields=[...f.querySelectorAll('input,textarea')];
+function valid(){
+  const name=f.name.value.trim(), email=f.email.value.trim(), msg=f.message.value.trim();
+  const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return name && emailOk && msg;
+}
+fields.forEach(el=>el.addEventListener('input',()=>{send.disabled=!valid();}));
+f.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!valid())return;
+  const subject=encodeURIComponent('Portfolio contact from '+f.name.value.trim());
+  const body=encodeURIComponent(f.message.value.trim()+'\n\n— '+f.name.value.trim()+' ('+f.email.value.trim()+')');
+  window.location.href='mailto:pokale.g@northeastern.edu?subject='+subject+'&body='+body;
+});
+
+// Hide sticky CTA while keyboard is open (mobile)
+const cta=document.getElementById('stickycta');
+fields.forEach(el=>{
+  el.addEventListener('focus',()=>cta.style.display='none');
+  el.addEventListener('blur',()=>cta.style.display='');
+});
+</script>
+</body>
+</html>
